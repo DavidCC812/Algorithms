@@ -4,8 +4,27 @@ public static class ArrayProblems
 {
     public static bool AreArraysEqual<T>(T[] xs, T[] ys)
     {
-        throw new NotImplementedException();
+        if (xs == ys)
+        {
+            return true;
+        }
+
+        if (xs == null || ys == null || xs.Length != ys.Length)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < xs.Length; i++)
+        {
+            if (!EqualityComparer<T>.Default.Equals(xs[i], ys[i]))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
+
 
     public static void Swap<T>(T[] xs, int a, int b)
     {
