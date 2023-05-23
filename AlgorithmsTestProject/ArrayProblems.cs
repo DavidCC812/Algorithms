@@ -35,8 +35,14 @@ public static class ArrayProblems
 
     public static T FirstElement<T>(T[] xs)
     {
-        throw new NotImplementedException();
+        if (xs == null || xs.Length == 0)
+        {
+            throw new ArgumentException("The array is null or empty.");
+        }
+
+        return xs[0];
     }
+
 
     public static T LastElement<T>(T[] xs)
     {
