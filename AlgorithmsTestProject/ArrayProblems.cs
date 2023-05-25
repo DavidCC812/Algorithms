@@ -37,69 +37,37 @@ public static class ArrayProblems
     {
         if (xs == null || xs.Length == 0)
         {
-            throw new IndexOutOfRangeException("The array is null or empty.");
+            throw new ArgumentException("The array is null or empty.");
         }
 
         return xs[0];
     }
 
 
-
     public static T LastElement<T>(T[] xs)
     {
-        if (xs == null || xs.Length == 0)
-        {
-            throw new Exception("The array is null or empty.");
-        }
-
-        return xs[xs.Length - 1];
+        throw new NotImplementedException();
     }
-
 
     public static T MiddleElement<T>(T[] xs)
     {
-        if (xs == null || xs.Length == 0)
-        {
-            throw new IndexOutOfRangeException("The array is null or empty.");
-        }
-
-        int middleIndex = xs.Length / 2;
-        return xs[middleIndex];
+        throw new NotImplementedException();
     }
-
 
     public static void Reverse<T>(T[] xs)
     {
-        if (xs == null)
-        {
-            throw new ArgumentNullException(nameof(xs));
-        }
-
-        Array.Reverse(xs);
+        throw new NotImplementedException();
     }
-
 
     public static int CountElement<T>(T[] xs, T element)
-    {
-        if (xs == null)
-        {
-            throw new ArgumentNullException(nameof(xs));
-        }
-
-        return xs.Count(x => EqualityComparer<T>.Default.Equals(x, element));
+    { 
+        throw new NotImplementedException();
     }
-
 
     public static string ToCommaDelimitedString<T>(T[] xs)
     {
-        if (xs == null)
-        {
-            throw new ArgumentNullException(nameof(xs));
-        }
-
-        return string.Join(",", xs);
+        throw new NotImplementedException();
     }
-
 
     // Bonus problems
 
