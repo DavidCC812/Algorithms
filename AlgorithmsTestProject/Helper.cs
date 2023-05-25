@@ -72,8 +72,10 @@ public static class Helper
             Assert.AreEqual(a, b);
             Console.WriteLine($"Sums of first {i} powers of two = {b}");
         }
+
     }
-        
+
+
     [Test]
     public static void TestSumPowersOfTwo()
     {
