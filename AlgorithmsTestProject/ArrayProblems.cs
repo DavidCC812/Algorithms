@@ -49,7 +49,7 @@ public static class ArrayProblems
     {
         if (xs == null || xs.Length == 0)
         {
-            throw new Exception("The array is null or empty.");
+            throw new IndexOutOfRangeException("The array is null or empty.");
         }
 
         return xs[xs.Length - 1];
@@ -103,23 +103,64 @@ public static class ArrayProblems
 
     // Bonus problems
 
+ 
     public static int Count<T>(T[] xs, Func<T, bool> predicate)
     {
-        throw new NotImplementedException();
+        if (xs == null)
+        {
+            throw new ArgumentNullException(nameof(xs));
+        }
+
+        return xs.Count(predicate);
     }
+
+
 
     public static T Min<T>(T[] xs, Func<T, T, int> comparer)
     {
-        throw new NotImplementedException();
+        if (xs == null)
+        {
+            throw new ArgumentNullException(nameof(xs));
+        }
+
+        if (xs.Length < 1)
+        {
+            throw new IndexOutOfRangeException();
+        }
+
+        return xs.Min();
     }
 
-    public static T Max<T>(T[] xs, Func<T, T, int> comparer)
+
+   public static T Max<T>(T[] xs, Func<T, T, int> comparer)
     {
-        throw new NotImplementedException();
+        if (xs == null)
+        {
+            throw new ArgumentNullException(nameof(xs));
+        }
+
+        if (xs.Length < 1)
+        {
+            throw new IndexOutOfRangeException();
+        }
+
+        return xs.Max();
     }
 
-    public static bool HasDuplicates<T>(T[] xs)
+
+  public static bool HasDuplicates<T>(T[] xs)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < xs.Length; i++)
+        {
+            for (int j = i+1; j < xs.Length; j++)
+            {
+                if(xs[i].Equals(xs[j]))
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
+
 }
