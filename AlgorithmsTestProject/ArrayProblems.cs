@@ -102,7 +102,7 @@ public static class ArrayProblems
     {
         var min = xs[0];
         for (var i = 1; i < xs.Length; ++i)
-            if (comparer(xs[i], min) < 1)
+            if (comparer(xs[i], min) < 0)
                 min = xs[i];
         return min;
     }
@@ -111,7 +111,7 @@ public static class ArrayProblems
     {
         var max = xs[0];
         for (var i = 1; i < xs.Length; ++i)
-            if (comparer(xs[i], max) > 1)
+            if (comparer(xs[i], max) > 0)
                 max = xs[i];
         return max;
     }
